@@ -1,0 +1,16 @@
+{
+  "name": "smart-parking-management-system",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,green \"pnpm --filter @smart-parking/server dev\" \"pnpm --filter @smart-parking/client dev\"",
+    "dev:client": "pnpm --filter @smart-parking/client dev",
+    "dev:server": "pnpm --filter @smart-parking/server dev",
+    "build": "pnpm --filter @smart-parking/client build",
+    "test": "pnpm --filter @smart-parking/server test"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
